@@ -1,0 +1,416 @@
+/* ---------- Reset & base ---------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --paper: #EEF1F0;
+  --card: #FBFCFB;
+  --ink: #1C2B33;
+  --green: #1E7A5A;
+  --amber: #B9761F;
+  --line: #C9D2CF;
+
+  --font-display: 'Archivo', sans-serif;
+  --font-body: 'IBM Plex Sans', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+p {
+  margin: 0;
+}
+
+:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 3px;
+}
+
+.section {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+}
+
+.section-heading {
+  font-size: clamp(1.5rem, 1.2rem + 1vw, 2rem);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.5rem;
+}
+
+.section-sub {
+  color: var(--ink);
+  opacity: 0.7;
+  margin-bottom: 2rem;
+  font-size: 0.9375rem;
+}
+
+/* ---------- Masthead ---------- */
+.masthead {
+  border-bottom: 1px solid var(--line);
+  background: var(--paper);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.masthead-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 1.1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.masthead-name {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 0.875rem;
+  letter-spacing: 0.08em;
+}
+
+.masthead-nav {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.masthead-nav a {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  color: var(--ink);
+  opacity: 0.75;
+  transition: opacity 0.15s ease;
+}
+
+.masthead-nav a:hover,
+.masthead-nav a:focus-visible {
+  opacity: 1;
+  color: var(--green);
+}
+
+/* ---------- Hero ticket card ---------- */
+.hero {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 2rem;
+}
+
+.ticket-card {
+  position: relative;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--green);
+  border-radius: 6px;
+  padding: 3rem clamp(1.5rem, 4vw, 3.5rem);
+  box-shadow: 0 1px 2px rgba(28, 43, 51, 0.04);
+}
+
+.ticket-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 1.25rem;
+}
+
+.hero-heading {
+  font-size: clamp(2.5rem, 1.9rem + 2.6vw, 4.5rem);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  max-width: 18ch;
+  margin-bottom: 1.5rem;
+}
+
+.hero-sub {
+  font-size: clamp(1rem, 0.95rem + 0.3vw, 1.125rem);
+  max-width: 52ch;
+  opacity: 0.85;
+  margin-bottom: 2rem;
+}
+
+/* ---------- Status badges ---------- */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.35em 0.75em;
+  border-radius: 4px;
+  border: 1px solid transparent;
+}
+
+.badge-resolved {
+  color: var(--green);
+  background: rgba(30, 122, 90, 0.1);
+  border-color: rgba(30, 122, 90, 0.3);
+}
+
+.badge-active {
+  color: var(--amber);
+  background: rgba(185, 118, 31, 0.1);
+  border-color: rgba(185, 118, 31, 0.3);
+}
+
+.hero .badge {
+  font-size: 0.8125rem;
+  padding: 0.5em 1em;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero [data-stamp] {
+    animation: stamp-in 420ms cubic-bezier(0.2, 0.8, 0.3, 1.1) both;
+    animation-delay: 250ms;
+  }
+
+  @keyframes stamp-in {
+    0% {
+      opacity: 0;
+      transform: scale(1.8) rotate(-8deg);
+    }
+    60% {
+      opacity: 1;
+      transform: scale(0.95) rotate(2deg);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1) rotate(-2deg);
+    }
+  }
+}
+
+/* ---------- Work log tickets ---------- */
+.ticket {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 2rem clamp(1.25rem, 3vw, 2.25rem);
+  margin-bottom: 1.5rem;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .ticket:hover {
+    border-color: var(--green);
+    transform: translateY(-2px);
+  }
+}
+
+.ticket-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  opacity: 0.75;
+  margin-bottom: 1rem;
+}
+
+.ticket-title {
+  font-size: 1.375rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.75rem;
+}
+
+.ticket-desc {
+  max-width: 68ch;
+  margin-bottom: 1.25rem;
+  opacity: 0.9;
+}
+
+.repo-link {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--green);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s ease;
+}
+
+.repo-link:hover,
+.repo-link:focus-visible {
+  border-color: var(--green);
+}
+
+/* ---------- Toolkit diagnostics ---------- */
+.diagnostics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.diag-group {
+  border-top: 1px solid var(--line);
+  padding-top: 1rem;
+}
+
+.diag-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 0.75rem;
+}
+
+.diag-list li {
+  padding: 0.3rem 0;
+  opacity: 0.9;
+}
+
+/* ---------- About ---------- */
+.about-text {
+  max-width: 62ch;
+  font-size: 1.0625rem;
+  opacity: 0.9;
+}
+
+/* ---------- Contact ---------- */
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.btn {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  padding: 0.9em 1.5em;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  display: inline-flex;
+  align-items: center;
+  transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+}
+
+.btn-primary {
+  background: var(--green);
+  color: var(--card);
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  background: #185f47;
+}
+
+.btn-secondary {
+  background: transparent;
+  border-color: var(--line);
+  color: var(--ink);
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus-visible {
+  border-color: var(--ink);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .btn:hover {
+    transform: translateY(-1px);
+  }
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  border-top: 1px solid var(--line);
+  margin-top: 2rem;
+}
+
+.footer-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  opacity: 0.65;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 800px) {
+  .diagnostics {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .masthead-inner {
+    padding: 1rem 1.25rem;
+  }
+
+  .masthead-nav {
+    gap: 1rem;
+  }
+
+  .ticket-card {
+    padding: 2rem 1.25rem;
+  }
+
+  .section {
+    padding: 3rem 1.25rem;
+  }
+
+  .contact-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

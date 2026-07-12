@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Juan Baez — IT &amp; Software</title>
+<meta name="description" content="Juan Baez — IT support professional and self-taught Python developer. Projects, toolkit, and contact.">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Juan Baez — IT & Software">
+<meta property="og:description" content="IT support professional and self-taught Python developer. See the projects and get in touch.">
+<meta property="og:url" content="https://juan-baez1027.github.io/">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Juan Baez — IT & Software">
+<meta name="twitter:description" content="IT support professional and self-taught Python developer.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <span class="masthead-name">JUAN BAEZ</span>
+    <nav class="masthead-nav" aria-label="Primary">
+      <a href="#work-log">Work log</a>
+      <a href="#toolkit">Toolkit</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero" aria-labelledby="hero-heading">
+    <div class="ticket-card">
+      <div class="ticket-eyebrow">TICKET #0001 &middot; OPENED 2026 &middot; PRIORITY: HIGH</div>
+      <h1 id="hero-heading" class="hero-heading">I fix problems — and build the tools that prevent them.</h1>
+      <p class="hero-sub">IT support by day, Python developer by choice. I write software that takes the repetitive parts of the job off someone's plate.</p>
+      <div class="badge badge-resolved" data-stamp>RESOLVED</div>
+    </div>
+  </section>
+
+  <section id="work-log" class="section" aria-labelledby="work-log-heading">
+    <h2 id="work-log-heading" class="section-heading">Work log</h2>
+
+    <article class="ticket">
+      <div class="ticket-meta">
+        <span>LANG: PYTHON</span>
+        <span class="badge badge-resolved">RESOLVED</span>
+        <span>YEAR: 2026</span>
+      </div>
+      <h3 class="ticket-title">IT Support Assistant</h3>
+      <p class="ticket-desc">
+        A desktop chatbot for first-line IT support tickets — account lockouts, VPN, printer issues — built with Tkinter
+        and backed by a local Ollama model, Claude, or DeepSeek. It does real tool use: looks up tickets in SQLite,
+        checks accounts, searches the web, and pulls from an internal knowledge base with semantic (RAG) retrieval
+        and keyword fallback. Diagnostics are opt-in and read-only allowlisted; any remediation is approve-to-run
+        with a full audit trail. API keys live in the OS credential store, and it ships with cross-platform CI on
+        GitHub Actions across Ubuntu, macOS, and Windows on Python 3.10 and 3.12, plus a PyInstaller build to a
+        standalone .exe or .app.
+      </p>
+      <a class="repo-link" href="https://github.com/Juan-Baez1027/it-support-assistant" target="_blank" rel="noopener">View repository &rarr;</a>
+    </article>
+
+    <article class="ticket">
+      <div class="ticket-meta">
+        <span>LANG: PYTHON</span>
+        <span class="badge badge-active">ACTIVE</span>
+        <span>YEAR: 2026</span>
+      </div>
+      <h3 class="ticket-title">Text RPG</h3>
+      <p class="ticket-desc">
+        A terminal text RPG, built for fun on the side. Turn-based combat, leveling and skill unlocks, procedurally
+        generated dungeon floors, and save/load so a run doesn't have to end in one sitting.
+      </p>
+      <a class="repo-link" href="https://github.com/Juan-Baez1027/RPG" target="_blank" rel="noopener">View repository &rarr;</a>
+    </article>
+  </section>
+
+  <section id="toolkit" class="section" aria-labelledby="toolkit-heading">
+    <h2 id="toolkit-heading" class="section-heading">Toolkit</h2>
+    <p class="section-sub">A diagnostics readout, not a résumé.</p>
+
+    <div class="diagnostics">
+      <div class="diag-group">
+        <div class="diag-label">LANGUAGES</div>
+        <ul class="diag-list">
+          <li>Python</li>
+          <li>SQL</li>
+          <li>HTML / CSS</li>
+        </ul>
+      </div>
+      <div class="diag-group">
+        <div class="diag-label">PRACTICES</div>
+        <ul class="diag-list">
+          <li>Testing with pytest</li>
+          <li>CI with GitHub Actions</li>
+          <li>Packaging with PyInstaller</li>
+        </ul>
+      </div>
+      <div class="diag-group">
+        <div class="diag-label">IT</div>
+        <ul class="diag-list">
+          <li>Troubleshooting</li>
+          <li>Windows / macOS / Linux</li>
+          <li>Networking basics</li>
+          <li>Active Directory concepts</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section" aria-labelledby="about-heading">
+    <h2 id="about-heading" class="section-heading">About</h2>
+    <p class="about-text">
+      I work in IT support, where most days come down to the same handful of problems showing up in different clothes.
+      Rather than just closing tickets, I build software that handles the routine parts — lookups, checks, and
+      guided fixes — so the people doing the work can move faster. I'm self-taught in Python, and I learn best by
+      shipping something real and fixing what breaks.
+    </p>
+  </section>
+
+  <section id="contact" class="section" aria-labelledby="contact-heading">
+    <h2 id="contact-heading" class="section-heading">Open a ticket</h2>
+    <p class="section-sub">Have a role, a project, or a question? Reach out.</p>
+    <div class="contact-actions">
+      <a class="btn btn-primary" href="mailto:juandebaez7@gmail.com">Email juandebaez7@gmail.com</a>
+      <a class="btn btn-secondary" href="https://github.com/Juan-Baez1027" target="_blank" rel="noopener">GitHub &rarr; Juan-Baez1027</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">© 2026 Juan Baez &middot; Status: available for work</div>
+</footer>
+
+</body>
+</html>
